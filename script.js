@@ -316,7 +316,7 @@ document.querySelectorAll('.info-card, .service-card, .country-card').forEach(el
 // CONTACT FORM SUBMIT VIA FETCH
 // ============================
 const contactForm = document.getElementById('contactForm');
-const scriptURL = 'https://script.google.com/macros/s/AKfycbz-TBnq18EYgb6Z9eLm76bbzNaOjPWcn2Fm9rtjFS0VRzWvVltmjRpeb1enfi39VW2zFg/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwLNCYWj4lbcoNG5pib3rKE2t_qmq3OOH58SFeejAAZo1arBWGJe1pUOSSz2M4qdTcEIA/exec';
 
 if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
@@ -361,4 +361,5 @@ if (contactForm) {
         });
     });
 }
+
 
