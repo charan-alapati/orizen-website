@@ -36,16 +36,6 @@ if (heroSection) {
     setInterval(updateHeroBackground, 7000);
 }
 
-// Contact form submission (only on home page)
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for your inquiry! We will get back to you within 24 hours.');
-        contactForm.reset();
-    });
-}
-
 // Chatbot data and functionality
 const chatData = {
     initial: {
@@ -304,3 +294,4 @@ document.querySelectorAll('.info-card, .service-card, .country-card').forEach(el
     el.style.transition = 'all 0.6s ease';
     observer.observe(el);
 });
+
