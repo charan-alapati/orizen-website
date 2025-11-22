@@ -311,3 +311,18 @@ document.querySelectorAll('.info-card, .service-card, .country-card').forEach(el
     el.style.transition = 'all 0.6s ease';
     observer.observe(el);
 });
+
+// ============================
+// PREVENT DOUBLE FORM SUBMIT
+// ============================
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function () {
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+        }
+    });
+}
