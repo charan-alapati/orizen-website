@@ -1,6 +1,10 @@
-// Navigation scroll effect
-window.addEventListener('scroll', function() {
+// ============================
+// NAVIGATION SCROLL EFFECT
+// ============================
+window.addEventListener('scroll', function () {
     const nav = document.getElementById('navbar');
+    if (!nav) return;
+
     if (window.scrollY > 100) {
         nav.classList.add('scrolled');
     } else {
@@ -8,7 +12,9 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Hero background slideshow
+// ============================
+// HERO BACKGROUND SLIDESHOW
+// ============================
 const heroSection = document.querySelector('.hero');
 
 if (heroSection) {
@@ -36,7 +42,9 @@ if (heroSection) {
     setInterval(updateHeroBackground, 7000);
 }
 
-// Chatbot data and functionality
+// ============================
+// CHATBOT DATA
+// ============================
 const chatData = {
     initial: {
         message: "Hello! 👋 Welcome to OriZen. How can I help you today?",
@@ -214,6 +222,7 @@ let chatHistory = [];
 function toggleChat() {
     const chatbot = document.getElementById('chatbot');
     if (!chatbot) return;
+
     chatbot.classList.toggle('active');
     if (chatbot.classList.contains('active') && chatHistory.length === 0) {
         initChat();
@@ -230,17 +239,20 @@ function initChat() {
 function displayMessage(message, sender) {
     const messagesDiv = document.getElementById('chatMessages');
     if (!messagesDiv) return;
+
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${sender}`;
     messageDiv.textContent = message;
     messagesDiv.appendChild(messageDiv);
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
     chatHistory.push({ message, sender });
 }
 
 function displayOptions(options) {
     const optionsDiv = document.getElementById('chatOptions');
     if (!optionsDiv) return;
+
     optionsDiv.innerHTML = '';
     options.forEach(option => {
         const btn = document.createElement('button');
@@ -254,6 +266,7 @@ function displayOptions(options) {
 function handleOption(option) {
     displayMessage(option.text, 'user');
     currentChatState = option.next;
+
     setTimeout(() => {
         const state = chatData[currentChatState];
         if (!state) return;
@@ -262,7 +275,9 @@ function handleOption(option) {
     }, 500);
 }
 
-// Smooth scroll for internal anchors on same page
+// ============================
+// SMOOTH SCROLL FOR SAME-PAGE LINKS
+// ============================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const target = document.querySelector(this.getAttribute('href'));
@@ -273,13 +288,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add simple reveal animation on scroll
+// ============================
+// REVEAL ANIMATION ON SCROLL
+// ============================
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
 };
 
-const observer = new IntersectionObserver(function(entries) {
+const observer = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
@@ -294,4 +311,3 @@ document.querySelectorAll('.info-card, .service-card, .country-card').forEach(el
     el.style.transition = 'all 0.6s ease';
     observer.observe(el);
 });
-
