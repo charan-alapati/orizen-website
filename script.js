@@ -313,16 +313,52 @@ document.querySelectorAll('.info-card, .service-card, .country-card').forEach(el
 });
 
 // ============================
-// PREVENT DOUBLE FORM SUBMIT
+// CONTACT FORM SUBMIT VIA FETCH
 // ============================
 const contactForm = document.getElementById('contactForm');
+const scriptURL = 'https://script.google.com/macros/s/AKfycbz-TBnq18EYgb6Z9eLm76bbzNaOjPWcn2Fm9rtjFS0VRzWvVltmjRpeb1enfi39VW2zFg/exec';
 
 if (contactForm) {
-    contactForm.addEventListener('submit', function () {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // don't leave the site
+
         const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const statusEl  = document.getElementById('form-status');
+
         if (submitBtn) {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
         }
+        if (statusEl) {
+            statusEl.textContent = '';
+        }
+
+        const formData = new FormData(contactForm);
+
+        fetch(scriptURL, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors' // we don't need to read the response
+        })
+        .then(() => {
+            if (statusEl) {
+                statusEl.textContent = 'Thank you! Your enquiry has been submitted.';
+                statusEl.style.color = '#16a34a'; // green
+            }
+            contactForm.reset();
+        })
+        .catch(() => {
+            if (statusEl) {
+                statusEl.textContent = 'Something went wrong. Please try again or contact us directly.';
+                statusEl.style.color = '#dc2626'; // red
+            }
+        })
+        .finally(() => {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Inquiry';
+            }
+        });
     });
 }
+
