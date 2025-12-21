@@ -3,176 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advisory & Contact Services – Germany</title>
+    <title>Job Opportunities | Orizen</title>
 
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         * {
-            margin: 0; padding: 0;
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
+
         body {
             background: #f6f8fc;
             color: #333;
-            line-height: 1.6;
         }
-        .header {
-            background: #2a5298;
+
+        /* Header */
+        .page-header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: #fff;
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
-        .header h1 { font-size: 2.4rem; margin-bottom: 10px; }
-        .header p { font-size: 1.1rem; opacity: 0.9; }
 
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Container */
         .container {
-            max-width: 1100px;
-            margin: 40px auto;
+            max-width: 1200px;
+            margin: 50px auto;
             padding: 0 20px;
         }
-        .intro {
-            margin-bottom: 30px;
+
+        /* Job Grid */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
-        .intro h2 {
-            font-size: 1.8rem;
-            color: #1e3c72;
-            margin-bottom: 8px;
+
+        .job-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .section {
-            margin-top: 40px;
+
+        .job-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
         }
-        .section h3 {
-            font-size: 1.5rem;
+
+        .job-card h3 {
             color: #1e3c72;
             margin-bottom: 10px;
         }
-        .section p {
-            margin-bottom: 12px;
+
+        .job-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
-        .contacts-list {
+
+        .job-card ul {
             list-style: none;
+            margin-bottom: 20px;
         }
-        .contacts-list li {
-            background: #fff;
-            padding: 12px 15px;
-            border-radius: 8px;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.08);
-            margin-bottom: 12px;
+
+        .job-card ul li {
+            font-size: 0.9rem;
+            padding: 6px 0;
         }
-        .contacts-list li a {
-            text-decoration: none;
+
+        .job-card ul li::before {
+            content: "✔";
             color: #2a5298;
+            margin-right: 8px;
+            font-weight: 600;
+        }
+
+        .job-card button {
+            background: #1e3c72;
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .job-card button:hover {
+            background: #16325c;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: #ffffff;
+            padding: 50px 20px;
+            margin-top: 60px;
+            text-align: center;
+            border-top: 1px solid #eaeaea;
+        }
+
+        .cta h2 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 25px;
+            font-size: 1rem;
+        }
+
+        .cta a {
+            display: inline-block;
+            background: #2a5298;
+            color: #fff;
+            padding: 12px 26px;
+            border-radius: 8px;
+            text-decoration: none;
             font-weight: 500;
         }
+
+        .cta a:hover {
+            background: #1e3c72;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 15px;
+            padding: 20px;
             font-size: 0.85rem;
             color: #777;
-            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <h1>Advisory & Contact Services in Germany</h1>
-        <p>Your guide to support services for skilled professionals and their families</p>
-    </header>
-
-    <section class="container">
-
-        <div class="intro">
-            <h2>Support When You Arrive</h2>
-            <p>
-                Germany offers a wide range of advisory services designed to help skilled workers and their families
-                settle, navigate the job market, and explore opportunities. From local Welcome Centers to qualification
-                recognition partners and regional information portals — these services provide personalized guidance
-                throughout your journey. :contentReference[oaicite:1]{index=1}
-            </p>
-        </div>
-
-        <div class="section">
-            <h3>What These Services Offer</h3>
-            <p>
-                Advisory services in Germany are focused on assisting international professionals with key needs:
-            </p>
-            <ul>
-                <li>Support with recognising foreign qualifications</li>
-                <li>Advice on employment and vocational training</li>
-                <li>Information about local laws, integration, and living</li>
-                <li>Points of contact for regional job, training, and language support</li>
-                <li>Dedicated services for newcomers and their families</li>
-            </ul>
-            <p>
-                Local Chambers of Industry and Commerce, international offices of universities, and Welcome Centers
-                are among the main contact points providing these services. :contentReference[oaicite:2]{index=2}
-            </p>
-        </div>
-
-        <div class="section">
-            <h3>Welcome Centers & Regional Contact Points</h3>
-            <p>
-                Below are examples of regional advisory contacts designed to assist skilled workers and professionals
-                in Germany:
-            </p>
-
-            <ul class="contacts-list">
-                <li>
-                    <strong>Baden-Württemberg</strong><br>
-                    <a href="https://www.thelaend.de" target="_blank">thelaend.de</a> – Information portal on living & working
-                </li>
-                <li>
-                    <strong>Welcome Center Stuttgart</strong><br>
-                    <a href="https://welcome.region-stuttgart.de" target="_blank">welcome.region-stuttgart.de</a>
-                </li>
-                <li>
-                    <strong>Network IQ – Qualification Recognition</strong><br>
-                    <a href="https://www.netzwerk-iq-bw.de" target="_blank">netzwerk-iq-bw.de</a>
-                </li>
-                <li>
-                    <strong>Make it in Bavaria</strong><br>
-                    <a href="https://www.stmwi.bayern.de" target="_blank">stmwi.bayern.de</a>
-                </li>
-                <li>
-                    <strong>Talent in Berlin Portal</strong><br>
-                    <a href="https://talent.berlin" target="_blank">talent.berlin</a>
-                </li>
-                <li>
-                    <strong>Welcome Center Berlin</strong><br>
-                    <a href="https://www.berlin.de" target="_blank">berlin.de</a>
-                </li>
-                <li>
-                    <strong>WELCOMECENTER Hesse</strong><br>
-                    <a href="https://www.work-in-hessen.com" target="_blank">work-in-hessen.com</a>
-                </li>
-                <li>
-                    <strong>Hamburg Welcome Center</strong><br>
-                    <a href="https://welcome.hamburg.de" target="_blank">welcome.hamburg.de</a>
-                </li>
-            </ul>
-
-            <p>
-                These points of contact help you connect with local resources, take informed steps toward employment,
-                recognise your qualifications, and settle into German life. :contentReference[oaicite:3]{index=3}
-            </p>
-        </div>
-
-        <div class="section">
-            <h3>Need More Help?</h3>
-            <p>
-                If you have questions about relocating, job search, visas, or integration in Germany, you can
-                contact official advisory hotlines, live chat services, or multilingual support centres aligned
-                with federal programs for skilled workers. :contentReference[oaicite:4]{index=4}
-            </p>
-        </div>
-
+    <!-- Header -->
+    <section class="page-header">
+        <h1>Job Opportunities Abroad</h1>
+        <p>Build your international career with verified job pathways and legal migration support</p>
     </section>
 
+    <!-- Job Categories -->
+    <section class="container">
+        <div class="job-grid">
+
+            <div class="job-card">
+                <h3>Green Jobs</h3>
+                <p>Careers focused on sustainability, renewable energy, and environmental protection.</p>
+                <ul>
+                    <li>Renewable Energy</li>
+                    <li>Environmental Engineering</li>
+                    <li>Climate Technology</li>
+                </ul>
+                <button>Apply Now</button>
+            </div>
+
+            <div class="job-card">
+                <h3>Healthcare Professionals</h3>
+                <p>High-demand roles in healthcare systems across Europe.</p>
+                <ul>
+                    <li>Nursing Professionals</li>
+                    <li>Physicians</li>
+                    <li>Medical Technicians</li>
+                </ul>
+                <button>Learn More</button>
+            </div>
+
+            <div class="job-card">
+                <h3>Engineering & IT</h3>
+                <p>Technology-driven careers with competitive salaries and growth.</p>
+                <ul>
+                    <li>Engineers</li>
+                    <li>IT Specialists</li>
+                    <li>Scientists</li>
+                </ul>
+                <button>View Roles</button>
+            </div>
+
+            <div class="job-card">
+                <h3>Skilled Trades</h3>
+                <p>Hands-on professions with fast-track migration options.</p>
+                <ul>
+                    <li>Craft Workers</li>
+                    <li>Transportation Workers</li>
+                    <li>Industrial Technicians</li>
+                </ul>
+                <button>Check Eligibility</button>
+            </div>
+
+            <div class="job-card">
+                <h3>Hospitality Industry</h3>
+                <p>Opportunities in international hotels and catering services.</p>
+                <ul>
+                    <li>Hotel Staff</li>
+                    <li>Chefs & Cooks</li>
+                    <li>Restaurant Services</li>
+                </ul>
+                <button>Explore Jobs</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <h2>Not Sure Where You Fit?</h2>
+        <p>Our experts will assess your profile and guide you towards the best job opportunity abroad.</p>
+        <a href="contact.html">Get Free Consultation</a>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        © 2025 Orizen – Powered by Make it in Germany content adaptation
+        © 2025 Orizen. All rights reserved.
     </footer>
 
 </body>
