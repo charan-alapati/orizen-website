@@ -4,244 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Opportunities | Orizen</title>
+    <link rel="stylesheet" href="style.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background: #f6f8fc;
-            color: #333;
-        }
-
-        .page-header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .page-header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .job-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .job-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .job-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-        }
-
-        .job-card h3 {
-            color: #1e3c72;
-            margin-bottom: 10px;
-        }
-
-        .job-card p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .job-card ul {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-
-        .job-card ul li {
-            font-size: 0.9rem;
-            padding: 6px 0;
-        }
-
-        .job-card ul li::before {
-            content: "✔";
-            color: #2a5298;
-            margin-right: 8px;
-            font-weight: 600;
-        }
-
-        .job-card button {
-            background: #1e3c72;
-            color: #fff;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        .job-card button:hover {
-            background: #16325c;
-        }
-
-        .cta {
-            background: #ffffff;
-            padding: 50px 20px;
-            margin-top: 60px;
-            text-align: center;
-            border-top: 1px solid #eaeaea;
-        }
-
-        .cta h2 {
-            color: #1e3c72;
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            max-width: 600px;
-            margin: 0 auto 25px;
-            font-size: 1rem;
-        }
-
-        .cta a {
-            display: inline-block;
-            background: #2a5298;
-            color: #fff;
-            padding: 12px 26px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .cta a:hover {
-            background: #1e3c72;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.85rem;
-            color: #777;
-        }
-    </style>
 </head>
 <body>
+ <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="window.location.href='index.html'"> <img src="bird.png" alt="OriZen Logo"> <span class="logo-ori">Ori</span><span class="logo-z">Z</span><span class="logo-en">en</span></div>
+            <ul class="nav-links">
+    <li><a href="index.html" class="nav-link active">Home</a></li>
+    <li><a href="languages.html" class="nav-link">Languages</a></li>
+    <li><a href="consultancy.html" class="nav-link">Consultancy</a></li>
+    <li><a href="jobs.html" class="nav-link">Jobs</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+</ul>
 
+        </div>
+    </nav>
     <!-- Header -->
     <section class="page-header">
         <h1>Job Opportunities Abroad</h1>
         <p>Find the right career path in Germany and Europe with official guidance and expert support</p>
     </section>
 
-    <!-- Job Content -->
-    <section class="container">
-        <div class="job-grid">
+   <div class="page-content">
 
-            <div class="job-card">
-                <h3>Green & Sustainable Jobs</h3>
-                <p>
-                    Germany strongly promotes environmentally friendly industries and sustainability-focused careers.
-                    These jobs contribute to renewable energy, climate protection, and green innovation.
-                </p>
-                <ul>
-                    <li>Renewable Energy Specialists</li>
-                    <li>Environmental Engineers</li>
-                    <li>Sustainability Consultants</li>
-                </ul>
-                <button>Know More</button>
-            </div>
+  <a href="index.html" class="back-btn">← Back to Home</a>
 
-            <div class="job-card">
-                <h3>Healthcare & Medical Careers</h3>
-                <p>
-                    Healthcare professionals are in high demand across Germany with structured pathways
-                    for qualification recognition and long-term employment.
-                </p>
-                <ul>
-                    <li>Nursing Professionals</li>
-                    <li>Doctors & Physicians</li>
-                    <li>Medical Laboratory Staff</li>
-                </ul>
-                <button>Know More</button>
-            </div>
+  <!-- Page Header -->
+  <div class="content-header">
+    <h1>Job Opportunities Abroad</h1>
+    <p style="font-size: 20px; color: #666; max-width: 800px; margin: 0 auto;">
+      Find the right career path in Germany and Europe with official guidance and expert support
+    </p>
+  </div>
 
-            <div class="job-card">
-                <h3>Engineering & IT Jobs</h3>
-                <p>
-                    Germany offers excellent opportunities in engineering and information technology,
-                    supported by innovation-driven industries and global companies.
-                </p>
-                <ul>
-                    <li>Mechanical & Electrical Engineers</li>
-                    <li>IT & Software Specialists</li>
-                    <li>Research Scientists</li>
-                </ul>
-                <button>Know More</button>
-            </div>
+  <!-- Main Content Wrapper -->
+  <div class="jobs-wrapper">
 
-            <div class="job-card">
-                <h3>Skilled Trades & Technical Roles</h3>
-                <p>
-                    Skilled workers with vocational training can access fast-track employment opportunities
-                    through Germany’s skilled migration framework.
-                </p>
-                <ul>
-                    <li>Craft Workers</li>
-                    <li>Technicians</li>
-                    <li>Transport & Logistics Staff</li>
-                </ul>
-                <button>Know More</button>
-            </div>
+    <!-- Job Cards -->
+    <div class="job-grid">
 
-            <div class="job-card">
-                <h3>Hospitality & Service Industry</h3>
-                <p>
-                    International professionals can explore opportunities in hotels, restaurants,
-                    and catering services with structured work permits.
-                </p>
-                <ul>
-                    <li>Hotel Professionals</li>
-                    <li>Chefs & Kitchen Staff</li>
-                    <li>Restaurant Services</li>
-                </ul>
-                <button>Know More</button>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-        <h2>Need Guidance?</h2>
+      <div class="job-card">
+        <h3>Green & Sustainable Jobs</h3>
         <p>
-            Our advisors will help you understand eligibility, qualification recognition,
-            and the right job pathway based on your profile.
+          Germany strongly promotes environmentally friendly industries and sustainability-focused careers.
+          These jobs contribute to renewable energy, climate protection, and green innovation.
         </p>
-        <a href="contact.html">Talk to an Expert</a>
-    </section>
+        <ul>
+          <li>Renewable Energy Specialists</li>
+          <li>Environmental Engineers</li>
+          <li>Sustainability Consultants</li>
+        </ul>
+         <a href="index.html#contact" class="btn-link">
+  Know More
+</a>
+
+      </div>
+
+      <div class="job-card">
+        <h3>Healthcare & Medical Careers</h3>
+        <p>
+          Healthcare professionals are in high demand across Germany with structured pathways
+          for qualification recognition and long-term employment.
+        </p>
+        <ul>
+          <li>Nursing Professionals</li>
+          <li>Doctors & Physicians</li>
+          <li>Medical Laboratory Staff</li>
+        </ul>
+         <a href="index.html#contact" class="btn-link">
+  Know More
+</a>
+
+      </div>
+
+      <div class="job-card">
+        <h3>Engineering & IT Jobs</h3>
+        <p>
+          Germany offers excellent opportunities in engineering and information technology,
+          supported by innovation-driven industries and global companies.
+        </p>
+        <ul>
+          <li>Mechanical & Electrical Engineers</li>
+          <li>IT & Software Specialists</li>
+          <li>Research Scientists</li>
+        </ul>
+         <a href="index.html#contact" class="btn-link">
+  Know More
+</a>
+
+      </div>
+
+      <div class="job-card">
+        <h3>Skilled Trades & Technical Roles</h3>
+        <p>
+          Skilled workers with vocational training can access fast-track employment opportunities
+          through Germany’s skilled migration framework.
+        </p>
+        <ul>
+          <li>Craft Workers</li>
+          <li>Technicians</li>
+          <li>Transport & Logistics Staff</li>
+        </ul>
+        <a href="index.html#contact" class="btn-link">
+  Know More
+</a>
+
+      </div>
+
+      <div class="job-card">
+        <h3>Hospitality & Service Industry</h3>
+        <p>
+          International professionals can explore opportunities in hotels, restaurants,
+          and catering services with structured work permits.
+        </p>
+        <ul>
+          <li>Hotel Professionals</li>
+          <li>Chefs & Kitchen Staff</li>
+          <li>Restaurant Services</li>
+        </ul>
+         <a href="index.html#contact" class="btn-link">
+  Know More
+</a>
+
+      </div>
+         <div class="job-card">
+        <h3>Oppurtunity Card</h3>
+        <p>
+          The Germany Opportunity Card allows skilled professionals to enter Germany without a job offer and search for employment legally. 
+        </p>
+        <ul>
+          <li>Job search visa without prior job offer</li>
+          <li>Points-based eligibility system</li>
+          <li>Part-time work allowed while job searching</li>
+        </ul>
+        <a href="index.html#contact" class="btn-link">
+  Know More
+</a>
+
+      </div>
+
+    </div>
+    </div>
+
+
+
+
+    <!-- CTA Section -->
+    <div class="jobs-cta">
+      <h2>Need Guidance?</h2>
+      <p>
+        Our advisors will help you understand eligibility, qualification recognition,
+        and the right job pathway based on your profile.
+      </p>
+      <a href="index.html#contact">Talk to an Expert</a>
+    </div>
+
+  </div>
+</div>
+
 
     <!-- Footer -->
+    <!-- Footer -->
     <footer>
-        © 2025 Orizen. All rights reserved.
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>OriZen</h3>
+                <p style="color: #cbd5e1; line-height: 1.6;">
+                    Your trusted partner for language learning and overseas education.
+                    Empowering students to achieve their global aspirations.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="languages.html">Language Courses</a></li>
+                    <li><a href="consultancy.html">Study Abroad</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Languages</h3>
+                <ul>
+                    <li><a href="german.html">German</a></li>
+                    <li><a href="french.html">French</a></li>
+                    <li><a href="italian.html">Italian</a></li>
+                    <li><a href="english.html">English</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li style="color: #cbd5e1;">📞 +91 950 22 649 33</li>
+                    <li style="color: #cbd5e1;">🌐 www.orizen.co.in</li>
+                    <li style="color: #cbd5e1;">📍 <a 
+  href="https://www.google.com/maps/place/Center+for+German+Language/@16.5140633,80.6378732,1088m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a35faab00000067:0xf403359a0d598df6!8m2!3d16.5140582!4d80.6404481!16s%2Fg%2F11fxdt8gkx?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  Door No: 33-9-22 BARISTER STREET SEETHARAMPURAM, Vijayawada, 520002, Andhra Pradesh, India
+</a></li>
+                    <li style="color: #cbd5e1;">✉️ mail2orizen@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OriZen - Center for Foreign Languages & Overseas Consultancy. All rights reserved.</p>
+        </div>
     </footer>
 
 </body>
