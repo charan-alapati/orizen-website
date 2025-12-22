@@ -1265,7 +1265,7 @@ footer {
  
 .page-content,
 .jobs-wrapper {
-  max-width: 1400px;
+  max-width: none;
   margin: 0 auto;
   padding: 0 40px; /* left & right spacing */
 }
@@ -1474,3 +1474,4 @@ footer {
 .nav-link:hover:not(.active) {
     color: #000000; /* black text on hover */
 }
+
