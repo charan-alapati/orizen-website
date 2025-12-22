@@ -325,6 +325,57 @@ if (contactForm) {
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const statusEl  = document.getElementById('form-status');
 
+        // =========================
+        // CONSTRAINTS START
+        // =========================
+        const name    = contactForm.querySelector('[name="name"]');
+        const email   = contactForm.querySelector('[name="email"]');
+        const phone   = contactForm.querySelector('[name="phone"]');
+        const message = contactForm.querySelector('[name="message"]');
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneRegex = /^[0-9]{10}$/;
+
+        if (!name || !email || !phone || !message) {
+            if (statusEl) {
+                statusEl.textContent = 'Form fields are missing.';
+                statusEl.style.color = '#dc2626';
+            }
+            return;
+        }
+
+        name.value = name.value.trim();
+        email.value = email.value.trim();
+        phone.value = phone.value.trim();
+        message.value = message.value.trim();
+
+        if (!name.value || !email.value || !phone.value || !message.value) {
+            statusEl.textContent = 'All fields are required.';
+            statusEl.style.color = '#dc2626';
+            return;
+        }
+
+        if (!emailRegex.test(email.value)) {
+            statusEl.textContent = 'Enter a valid email address.';
+            statusEl.style.color = '#dc2626';
+            return;
+        }
+
+        if (!phoneRegex.test(phone.value)) {
+            statusEl.textContent = 'Phone number must be exactly 10 digits.';
+            statusEl.style.color = '#dc2626';
+            return;
+        }
+
+        if (message.value.length < 10) {
+            statusEl.textContent = 'Message must be at least 10 characters.';
+            statusEl.style.color = '#dc2626';
+            return;
+        }
+        // =========================
+        // CONSTRAINTS END
+        // =========================
+
         if (submitBtn) {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
@@ -362,5 +413,92 @@ if (contactForm) {
     });
 }
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".testimonial-track");
+  const cards = document.querySelectorAll(".testimonial-card");
+
+  if (!track || cards.length === 0) return;
+
+  let currentIndex = 0;
+  const visibleWidth = document.querySelector(".testimonial-slider").offsetWidth;
+  const cardWidth = cards[0].offsetWidth;
+  const gap = parseInt(getComputedStyle(track).gap) || 0;
+
+  const step = cardWidth + gap;
+  const totalCards = cards.length;
+
+  function slide() {
+    currentIndex++;
+
+    if (currentIndex >= totalCards) {
+      // after last card → reset
+      track.style.transition = "none";
+      track.style.transform = "translateX(0)";
+      currentIndex = 1;
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          track.style.transition = "transform 0.8s ease";
+          track.style.transform = `translateX(-${step * currentIndex}px)`;
+        });
+      });
+    } else {
+      track.style.transition = "transform 0.8s ease";
+      track.style.transform = `translateX(-${step * currentIndex}px)`;
+    }
+  }
+
+  setInterval(slide, 2500); // speed control
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const SHEET_URL =
+    "https://docs.google.com/spreadsheets/d/1lIpnVFQrez0uiKARovUTW34dhYMeSHgbL7Qa011Km2g/gviz/tq?tqx=out:json";
+
+  fetch(SHEET_URL)
+    .then(res => res.text())
+    .then(text => {
+      const json = JSON.parse(text.substring(47).slice(0, -2));
+      const rows = json.table.rows;
+      const container = document.getElementById("schedule-container");
+
+      container.innerHTML = "";
+
+      if (!rows.length) {
+        container.innerHTML = "<p>No live schedules available.</p>";
+        return;
+      }
+
+      rows.slice(1).forEach(row => {
+        const cells = row.c.map(c => (c ? c.v : ""));
+
+        const card = document.createElement("div");
+        card.className = "schedule-card";
+
+        card.innerHTML = `
+  <span class="live-badge">LIVE</span>
+
+  <h3>${cells[0]}</h3>
+  <p><strong>Batch:</strong> ${cells[1]}</p>
+  <p><strong>Days:</strong> ${cells[2]}</p>
+  <p><strong>Time:</strong> ${cells[3]}</p>
+  <p><strong>Mode:</strong> ${cells[4]}</p>
+
+  <a href="index.html#contact" class="book-btn">
+    Book your spot now
+  </a>
+`;
+
+
+        container.appendChild(card);
+      });
+    })
+    .catch(() => {
+      document.getElementById("schedule-container").innerHTML =
+        "<p>Unable to load live schedule.</p>";
+    });
+});
 
 
